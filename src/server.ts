@@ -1,9 +1,10 @@
 import express from "express";
 import bodyParse from 'body-parser';
+import path from 'path'
 const app = express();
 
 // 静态页面
-app.use(express.static("./public"));  // 静态文件
+app.use(express.static(path.resolve(__dirname, "../public")));  // 静态文件
 
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({extended : true}));
